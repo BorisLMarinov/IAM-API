@@ -38,10 +38,11 @@ public class AuthService {
         // * Step 2: Assemble the User object. 
         // ! SECURITY: The password is encrypted using BCrypt immediately via passwordEncoder.encode().
         var user = User.builder()
+                .name(request.name())
                 .email(request.email())
                 .passwordHash(passwordEncoder.encode(request.password()))
                 // ! CHANGED: New accounts are PENDING by default — admin must activate them. Change this based on needs.
-                .status("PENDING")
+                .status("ACTIVE")
                 .build();
 
         // * Step 3: Persistence and Token Issuance.

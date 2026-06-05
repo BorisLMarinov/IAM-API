@@ -53,6 +53,7 @@ public class UserManagementService {
 
         // * Step 3: Return a clean Profile DTO (excludes sensitive fields like passwordHash).
         return new UserProfileResponse(
+            user.getName(),
             user.getEmail(),
             user.getStatus(),
             roles,

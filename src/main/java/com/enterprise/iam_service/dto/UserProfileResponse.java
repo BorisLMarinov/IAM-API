@@ -5,6 +5,7 @@ import java.util.Set;
 
 
 public record UserProfileResponse(
+    String name,
     String email, 
     String status,
     Set<String> roles,

@@ -24,6 +24,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    // * Profile: Human-readable display name for the user.
+    @Column(nullable = false)
+    private String name;
+
     // ! SECURITY: unique=true prevents duplicate accounts with the same email.
     @Column(unique = true, nullable = false)
     private String email;
@@ -34,7 +38,7 @@ public class User {
 
     // * Status: Controls account lifecycle (e.g., ACTIVE, PENDING, LOCKED).
     @Builder.Default
-    private String status = "PENDING"; 
+    private String status = "ACTIVE"; 
 
     @Builder.Default
     private Boolean emailVerified = false;

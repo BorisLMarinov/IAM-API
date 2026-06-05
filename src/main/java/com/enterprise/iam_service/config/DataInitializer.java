@@ -36,6 +36,7 @@ public class DataInitializer implements CommandLineRunner {
                 // ! SECURITY ALERT: Default credentials used for first-time setup. 
                 // ! Change password immediately after first login.
                 User admin = User.builder()
+                    .name("System Admin")
                         .email("admin@enterprise.com")
                         .passwordHash(passwordEncoder.encode("admin123")) // ! BCrypt hashing applied here
                         .status("ACTIVE")
