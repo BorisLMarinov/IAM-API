@@ -42,6 +42,7 @@ public class SecurityConfig {
                 // Public: login and register
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/error").permitAll()
+                .requestMatchers("/api/internal/**").permitAll()
                 // Everything else requires a valid JWT
                 .anyRequest().authenticated()
             )
